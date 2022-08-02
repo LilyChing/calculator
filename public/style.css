@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(to right, #e3edf2, #9FC9DD);
+}
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+    background-color: rgb(10, 13, 37);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.button-light{
+    width: 50;
+    height: 50;
+    font-size: 25;
+    margin: 2;
+    cursor: pointer;
+    background: #9FC9DD;
+    border: none;
+    color: white;
+    border-radius: 40%;
+}
+.button-orange{
+    width: 50;
+    height: 50;
+    font-size: 25;
+    margin: 2;
+    cursor: pointer;
+    background: #FF844B;
+    border: none;
+    color: white;
+    border-radius: 40%;
+}
+
+.button-zero{
+    width: 50;
+    height: 50;
+    font-size: 25;
+    margin: 2;
+    cursor: pointer;
+    background: rgb(78, 125, 150);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    padding-right: 3rem;
+}
+
+.button{
+    width: 50;
+    height: 50;
+    font-size: 25;
+    margin: 2;
+    cursor: pointer;
+    background: rgb(78, 125, 150);
+    border: none;
+    color: white;
+    border-radius: 40%;
+}
+
+.button-light:hover,
+.button-orange:hover,
+.button:hover{
+    background-color: gray;
+}
+.textview{
+    width: 217;
+    margin: 5;
+    font-size: 25;
+    padding: 5;
+    border: none;
+    background-color: rgb(10, 13, 37);
+    color: rgb(78, 125, 150);
+}
