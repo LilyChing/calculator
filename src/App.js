@@ -1,5 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import {Screen} from './Screen';
+import {ButtonBox} from './ButtonBox';
+import {Button} from './Button';
 
 function App() {
   return (
