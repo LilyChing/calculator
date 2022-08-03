@@ -125,9 +125,6 @@ export class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(typeof(this.state.firstNum)+this.state.firstNum);
-    console.log(typeof(this.state.screenNum)+this.state.screenNum);
     return (
       <div className='main'>
         <Screen value={this.state.screenNum} />
