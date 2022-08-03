@@ -33,4 +33,4 @@ The Calculator is a modern application written in React.js. Calculator provide s
 
 ## License
 
-The project is done by Lily Ching, Samuel Yeung and Wing Lam.
+The project is done by [@Lily Ching](https://github.com/LilyChing), [@Samuel Yeung](https://github.com/FancyBubble) and [@Wing Lam](https://github.com/Winglam13).
