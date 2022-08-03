@@ -5,6 +5,6 @@ export class Screen extends React.Component {
     }
 
     render(){
-        return <h1 className='screen'>123</h1>
+        return <h1 className='screen' value={this.props.value}>{this.props.value}</h1>
     }
 }
