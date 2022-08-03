@@ -3,7 +3,7 @@ A calculator project built with React class Component.
 
 <img width="225" alt="Calculator" src="https://user-images.githubusercontent.com/106130121/182583964-d5a9d175-7f37-4053-8da0-d9f668d54fe0.png">
 
-## Lists
+## Table of Contents
 * [Description](#description)
 * [How to play](#how-to-play)
 * [Installation](#installation)
