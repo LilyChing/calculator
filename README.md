@@ -13,7 +13,7 @@ A calculator project built with React class Component.
 The Calculator is a modern application written in React.js. Calculator provide standard function which bring normal operations and evaluates commands. Calculator perform arithmetic and logical operations to display the results.
 
 ## How to play
-<img width="240" alt="Calculator" src="https://user-images.githubusercontent.com/106130121/182590007-42c4eb39-a377-4070-9876-c6bab535d81f.gif">
+<img width="240" alt="Calculator" src="https://user-images.githubusercontent.com/106130121/182668791-3e44d15e-5b89-4ac0-abf0-22ac77b53893.gif">
 
 * Add, subtract, multiply and divide numbers
 * Calculate percentages
