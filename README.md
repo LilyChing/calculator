@@ -17,10 +17,11 @@ The Calculator is a modern application written in React.js. Calculator provide s
 ## How to play
 <img width="240" alt="Calculator" src="https://user-images.githubusercontent.com/106130121/182590007-42c4eb39-a377-4070-9876-c6bab535d81f.gif">
 
-* Add, subtract, multiply and divide two numbers
+* Add, subtract, multiply and divide numbers
+* Calculate percentages
 * Use the clear button to clear the input field
 * Mathematical operations can be chained together
-* Hit the equal button and the calculator display the correct output
+* Hit the equal button and the calculator to display the correct output
 
 ##  Installation
 
