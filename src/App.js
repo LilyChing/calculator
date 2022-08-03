@@ -31,9 +31,10 @@ export class App extends React.Component {
             : index == 16 ? "button-zero"
               : "button"}
         onClick={() => {
+          index == 0 ? this.resetClickHandler() :
           index == 1 ? this.posNegNumHandler() :
+          index == 2 ? this.percentClickHandler() :
             index == 3 || index == 7 || index == 11 || index == 15 ? this.operatorClickHandler(value) :
-              index == 2 ? this.percentClickHandler() : index == 0 ? this.resetClickHandler() :
                 index == 18 ? this.equalClickHandler() :
                   index == 17 ? this.decimalClickHandler() : this.numClickHandler(value);
         }}
@@ -98,6 +99,10 @@ export class App extends React.Component {
   }
 
   operatorClickHandler(btnValue) {
+    //If you press the third operator while there have firstNum and secondNum, we will calc the prep answer first
+    if(this.state.firstNum && this.state.secondNum){
+      this.equalClickHandler();
+    }
     this.setState({
       operator: btnValue
     });
@@ -134,6 +139,33 @@ export class App extends React.Component {
         }
         this.setState({ screenNum: answer, firstNum: answer, secondNum: null });
         break;
+    }
+  }
+  
+  // AC button reset number
+  resetClickHandler() {
+    this.setState({
+      screenNum: 0,
+      firstNum: null,
+      operator: null,
+      secondNum: 0
+    })
+  }
+
+  // screenNum/100
+  percentClickHandler() {
+    const currentScreenNum = this.state.screenNum;
+    if (!this.state.secondNum) {
+      this.setState({
+        screenNum: parseFloat((currentScreenNum / 100).toFixed(14)),
+        firstNum: parseFloat((currentScreenNum / 100).toFixed(14))
+      })
+    }
+    else {
+      this.setState({
+        screenNum: parseFloat((currentScreenNum / 100).toFixed(14)),
+        secondNum: parseFloat((currentScreenNum / 100).toFixed(14))
+      })
     }
   }
 
