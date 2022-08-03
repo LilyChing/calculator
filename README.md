@@ -1,4 +1,6 @@
-# Calculator
+# React Calculator
+A calculator project built with React class Component.
+
 <img width="225" alt="Calculator" src="https://user-images.githubusercontent.com/106130121/182583964-d5a9d175-7f37-4053-8da0-d9f668d54fe0.png">
 
 ## Lists
@@ -20,9 +22,16 @@ The Calculator is a modern application written in React.js. Calculator provide s
 * Mathematical operations can be chained together
 * Hit the equal button and the calculator display the correct output
 
-##  Install
+##  Installation
 
-```
-let message = 'Hello world';
-alert(message);
-```
+1. `git clone https://github.com/LilyChing/calculator.git`
+
+2. `cd calculator`
+
+3. `npm install`
+
+4. `npm start`
+
+## License
+
+The project is done by Lily Ching, Samuel Yeung and Wing Lam.
