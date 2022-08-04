@@ -46,6 +46,7 @@ export class App extends React.Component {
   }
 
   decimalClickHandler() {
+    // When the screenNum already have ".", return and do nothing
     if (this.state.screenNum.toString().includes(".")) {
       return;
     }
@@ -69,8 +70,6 @@ export class App extends React.Component {
   }
 
   numClickHandler(btnValue) {
-    // When the screenNum already have ".", return and do nothing
-
     if (!this.state.firstNum || !this.state.operator) {
       if (this.state.firstNum == null) {
         this.setState({ screenNum: btnValue, firstNum: btnValue })
@@ -99,7 +98,9 @@ export class App extends React.Component {
   }
 
   operatorClickHandler(btnValue) {
-    if (!this.state.firstNum){
+    if (this.state.screenNum && !this.state.firstNum){
+      this.setState({ firstNum: this.state.screenNum });
+    }else if (!this.state.firstNum){
       return;
     }
     //If you press the third operator while there have firstNum and secondNum, we will calc the prep answer first
