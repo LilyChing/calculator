@@ -72,7 +72,7 @@ export class App extends React.Component {
     // When the screenNum already have ".", return and do nothing
 
     if (!this.state.firstNum || !this.state.operator) {
-      if (this.state.screenNum == null) {
+      if (this.state.firstNum == null) {
         this.setState({ screenNum: btnValue, firstNum: btnValue })
       }
       else if (this.state.screenNum.length < 13) {
@@ -101,7 +101,37 @@ export class App extends React.Component {
   operatorClickHandler(btnValue) {
     //If you press the third operator while there have firstNum and secondNum, we will calc the prep answer first
     if(this.state.firstNum && this.state.secondNum){
-      this.equalClickHandler();
+      let answer = 0;
+      switch (this.state.operator) {
+        case '+':
+          answer = Number.parseFloat(parseFloat(this.state.firstNum) + parseFloat(this.state.secondNum));
+          if (answer.toString().length > 9) {
+            answer = parseFloat((answer).toFixed(9));
+          }
+          this.setState({ screenNum: answer, firstNum: answer, secondNum: null, operator: null });
+          break;
+        case '-':
+          answer = Number.parseFloat(parseFloat(this.state.firstNum) - parseFloat(this.state.secondNum));
+          if (answer.toString().length > 9) {
+            answer = parseFloat((answer).toFixed(9));
+          }
+          this.setState({ screenNum: answer, firstNum: answer, secondNum: null, operator: null });
+          break;
+        case 'x':
+          answer = Number.parseFloat(parseFloat(this.state.firstNum) * parseFloat(this.state.secondNum));
+          if (answer.toString().length > 9) {
+            answer = parseFloat((answer).toFixed(9));
+          }
+          this.setState({ screenNum: answer, firstNum: answer, secondNum: null, operator: null });
+          break;
+        case '÷':
+          answer = Number.parseFloat(parseFloat(this.state.firstNum) / parseFloat(this.state.secondNum));
+          if (answer.toString().length > 9) {
+            answer = parseFloat((answer).toFixed(9));
+          }
+          this.setState({ screenNum: answer, firstNum: answer, secondNum: null, operator: null });
+          break;
+      }
     }
     this.setState({
       operator: btnValue
@@ -114,30 +144,30 @@ export class App extends React.Component {
       case '+':
         answer = Number.parseFloat(parseFloat(this.state.firstNum) + parseFloat(this.state.secondNum));
         if (answer.toString().length > 9) {
-          answer = answer.toFixed(9);
+          answer = parseFloat((answer).toFixed(9));
         }
-        this.setState({ screenNum: answer, firstNum: answer, secondNum: null });
+        this.setState({ screenNum: answer, firstNum: null, secondNum: null, operator: null });
         break;
       case '-':
         answer = Number.parseFloat(parseFloat(this.state.firstNum) - parseFloat(this.state.secondNum));
         if (answer.toString().length > 9) {
-          answer = answer.toFixed(9);
+          answer = parseFloat((answer).toFixed(9));
         }
-        this.setState({ screenNum: answer, firstNum: answer, secondNum: null });
+        this.setState({ screenNum: answer, firstNum: null, secondNum: null, operator: null });
         break;
       case 'x':
         answer = Number.parseFloat(parseFloat(this.state.firstNum) * parseFloat(this.state.secondNum));
         if (answer.toString().length > 9) {
-          answer = answer.toFixed(9);
+          answer = parseFloat((answer).toFixed(9));
         }
-        this.setState({ screenNum: answer, firstNum: answer, secondNum: null });
+        this.setState({ screenNum: answer, firstNum: null, secondNum: null, operator: null });
         break;
       case '÷':
         answer = Number.parseFloat(parseFloat(this.state.firstNum) / parseFloat(this.state.secondNum));
         if (answer.toString().length > 9) {
-          answer = answer.toFixed(9);
+          answer = parseFloat((answer).toFixed(9));
         }
-        this.setState({ screenNum: answer, firstNum: answer, secondNum: null });
+        this.setState({ screenNum: answer, firstNum: null, secondNum: null, operator: null });
         break;
     }
   }
@@ -145,28 +175,11 @@ export class App extends React.Component {
   // AC button reset number
   resetClickHandler() {
     this.setState({
-      screenNum: 0,
+      screenNum: null,
       firstNum: null,
       operator: null,
-      secondNum: 0
+      secondNum: null
     })
-  }
-
-  // screenNum/100
-  percentClickHandler() {
-    const currentScreenNum = this.state.screenNum;
-    if (!this.state.secondNum) {
-      this.setState({
-        screenNum: parseFloat((currentScreenNum / 100).toFixed(14)),
-        firstNum: parseFloat((currentScreenNum / 100).toFixed(14))
-      })
-    }
-    else {
-      this.setState({
-        screenNum: parseFloat((currentScreenNum / 100).toFixed(14)),
-        secondNum: parseFloat((currentScreenNum / 100).toFixed(14))
-      })
-    }
   }
 
   //switch number between positive and negative numbers 
@@ -185,14 +198,16 @@ export class App extends React.Component {
       }
     }
   }
+
+  // screenNum/100
   percentClickHandler() {
     const currentScreenNum = this.state.screenNum;
     if (!this.state.secondNum) {
       const answer = currentScreenNum / 100;
       if (answer.toString().length > 9) {
         this.setState({
-          screenNum: answer.toFixed(9),
-          firstNum: answer.toFixed(9)
+          screenNum: parseFloat((answer).toFixed(9)),
+          firstNum: parseFloat((answer).toFixed(9))
         })
       }
       else {
@@ -206,8 +221,8 @@ export class App extends React.Component {
       const answer = currentScreenNum / 100;
       if (answer.toString().length > 9) {
         this.setState({
-          screenNum: answer.toFixed(9),
-          secondNum: answer.toFixed(9)
+          screenNum: parseFloat((answer).toFixed(9)),
+          secondNum: parseFloat((answer).toFixed(9))
         })
       }
       else {
@@ -219,14 +234,6 @@ export class App extends React.Component {
     }
   }
 
-  resetClickHandler() {
-    this.setState({
-      screenNum: null,
-      firstNum: null,
-      operator: null,
-      secondNum: null
-    })
-  }
 
   render() {
     console.log(this.state);
