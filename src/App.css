@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-body {
+#root {
   background: linear-gradient(to right, #e3edf2, #9FC9DD);
 }
 
