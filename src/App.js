@@ -99,6 +99,9 @@ export class App extends React.Component {
   }
 
   operatorClickHandler(btnValue) {
+    if (!this.state.firstNum){
+      return;
+    }
     //If you press the third operator while there have firstNum and secondNum, we will calc the prep answer first
     if(this.state.firstNum && this.state.secondNum){
       let answer = 0;
@@ -140,6 +143,9 @@ export class App extends React.Component {
 
   equalClickHandler() {
     let answer = 0;
+    if (!this.state.firstNum && !this.state.secondNum && !this.state.operator){
+      return;
+    }
     switch (this.state.operator) {
       case '+':
         answer = Number.parseFloat(parseFloat(this.state.firstNum) + parseFloat(this.state.secondNum));
