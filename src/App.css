@@ -4,7 +4,26 @@
 }
 
 #root {
-  background: linear-gradient(to right, #e3edf2, #9FC9DD);
+  /* background: linear-gradient(to right, #e3edf2, #9FC9DD);  */
+  /* background: linear-gradient(-45deg, white,#4e7d96,#EC9E5B,white,#4e7d96);  */
+  background: linear-gradient(-45deg,#EC9E5B, #4e7d96,white,#4e7d96);
+  background-size: 1000% 1000%;
+  animation: gradient 15s ease infinite;
+}
+
+ @keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+
 }
 
 .main {
@@ -103,3 +122,123 @@
   justify-content: flex-end
 }
 
+@media only screen and (min-width: 1200px){
+  .button-light {
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+  }
+  .button-orange {
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+  }
+
+  .button-zero {
+    width: 95%;
+    height: 120px;
+    font-size: 60px;
+  }
+
+  .button {
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+  }
+
+  .textview {
+    width: 120px;
+    height: 120px;
+    font-size: 60px;
+  }
+
+  .screen{
+    width: 500px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  .button-light {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .button-orange {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .button-zero {
+    width: 95%;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .button {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .textview {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .screen{
+    width: 350px;
+    height: 60px;
+  }
+
+}
+
+@media screen and (max-width:600px){
+  .button-light {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 1px;
+  }
+
+  .button-orange {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 1px;
+  }
+
+  .button-zero {
+    width: 95%;
+    height: 40px;
+    font-size: 20px;
+    margin: 1px;
+  }
+
+  .button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 1px;
+  }
+
+  .textview {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .screen{
+    width: 175px;
+    height: 30px;
+  }
+
+  .buttonBox {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1px;
+  }
+}
