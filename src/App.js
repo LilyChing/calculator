@@ -144,7 +144,7 @@ export class App extends React.Component {
 
   equalClickHandler() {
     let answer = 0;
-    if (!this.state.firstNum && !this.state.secondNum && !this.state.operator){
+    if (!this.state.firstNum || !this.state.secondNum || !this.state.operator){
       return;
     }
     switch (this.state.operator) {
